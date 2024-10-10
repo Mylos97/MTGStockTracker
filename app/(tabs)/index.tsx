@@ -1,6 +1,6 @@
 import { Image, StyleSheet, Platform } from 'react-native';
 
-import { HelloWave } from '@/components/HelloWave';
+import { Card } from '@/components/Card';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
@@ -9,17 +9,12 @@ export default function HomeScreen() {
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
+      >
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
+        <ThemedText type="title">Overview</ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
+        <Card name={"Dockside"}></Card>
         <ThemedText type="subtitle">Step 1: Try it</ThemedText>
         <ThemedText>
           Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
