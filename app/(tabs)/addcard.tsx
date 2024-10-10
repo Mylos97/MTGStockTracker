@@ -21,7 +21,7 @@ export default function HomeScreen() {
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}>
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Cards</ThemedText>
-        <Button label='Add Card' onPress={handlePopupOpen} />
+        <Button label='All cards' onPress={handlePopupOpen} />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Latest Added Cards</ThemedText>
