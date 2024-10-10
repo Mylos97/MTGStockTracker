@@ -1,25 +1,31 @@
-import React from 'react';
+import { PropsWithChildren } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
+import { ThemedView } from '@/components/ThemedView';
 
-type ButtonProps = {
+type Props = PropsWithChildren<{
   label: string;
   onPress: () => void;
-};
+}>;
 
-export function Button({ label, onPress }: ButtonProps) {
+export function Button({ label, onPress, children }: Props) {
   return (
     <TouchableOpacity style={styles.button} onPress={onPress}>
-      <ThemedText style={styles.text}>{label}</ThemedText>
+      <ThemedView style={styles.content}>
+        {label ? <ThemedText style={styles.text}>{label}</ThemedText> : null}      
+        {children && <ThemedView>{children}</ThemedView>}
+      </ThemedView>
     </TouchableOpacity>
   );
-}
+};
 
 const styles = StyleSheet.create({
+  content: {
+    flexDirection: 'row', // Ensures the icon and text are side by side
+    alignItems: 'center', // Center items vertically
+  },
   button: {
-    backgroundColor: '#007BFF',
-    paddingVertical: 12,
-    paddingHorizontal: 20,
+    backgroundColor: 'transparent',
     borderRadius: 5,
     alignItems: 'center',
     justifyContent: 'center',
@@ -27,6 +33,6 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 16,
     lineHeight: 32,
-    color: '#FFFFFF',
+    color: 'black',
   },
 });
