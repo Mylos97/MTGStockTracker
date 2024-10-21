@@ -4,6 +4,9 @@ const tintColorDark = '#fff';
 export const Colors = {
   light: {
     text: '#11181C',
+    primary: '#418AF2',
+    secondaryRed: '#E84275',
+    secondaryGreen: '#0AE596',
     cardColor: '#F0F4F8',
     growthColor: '#1FAA59',
     background: '#fff',
@@ -14,6 +17,9 @@ export const Colors = {
   },
   dark: {
     text: '#ECEDEE',
+    primary: '#418AF2',
+    secondaryRed: '#E84275',
+    secondaryGreen: '#0AE596',
     cardColor: '#F0F4F8',
     growthColor: '#1FAA59',
     background: '#151718',
